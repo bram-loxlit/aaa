@@ -13,7 +13,7 @@ body, html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Fixed Navigation (Centrering & Formaat) */
+/* Fixed Navigation (PNG verandert via CSS-filter naar donkergrijs) */
 .logo-container {
     position: fixed !important;
     top: 25px !important;
@@ -35,7 +35,8 @@ body, html {
     height: auto !important;
     display: block !important;
     margin: 0 auto !important;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15)) !important;
+    /* Zet zowel een zwarte als witte PNG om naar strak antraciet (#1a1c1e) */
+    filter: brightness(0) saturate(100%) invert(10%) sepia(8%) saturate(1000%) hue-rotate(170deg) brightness(90%) contrast(90%) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08)) !important;
 }
 
 /* 1. HERO SLIDESHOW */
