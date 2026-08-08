@@ -1,153 +1,587 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AAA HiFi — Integrating Sound & Vision for Artists</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #bdc8d0;
-      color: #2c353d;
-      line-height: 1.6;
-    }
-
-    /* Hero / Banner Section */
-    .hero {
-      position: relative;
-      height: 100vh;
-      width: 100vw;
-      background-image: url('hero.jpg');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      padding-bottom: 2rem;
-    }
-
-    /* Sliding Marquee Banner */
-    .marquee-container {
-      position: absolute;
-      bottom: 4rem;
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      background: rgba(189, 200, 208, 0.4);
-      backdrop-filter: blur(5px);
-      padding: 10px 0;
-    }
-    .marquee-content {
-      display: inline-block;
-      animation: marquee 20s linear infinite;
-    }
-    .marquee-content span {
-      font-size: 0.9rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-right: 3rem;
-      color: #2c353d;
-    }
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .contact-link {
-      color: #2c353d;
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      font-weight: 600;
-      border-bottom: 1px solid rgba(44, 53, 61, 0.4);
-      padding-bottom: 2px;
-      z-index: 2;
-    }
-
-    /* Content Sections */
-    .section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
-      border-bottom: 1px solid rgba(44, 53, 61, 0.15);
-    }
-    .section h2 {
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-    }
-    .section p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      opacity: 0.9;
-    }
-
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      opacity: 0.7;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAA BESPOKE | Beyond Time & Matter.</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="AAA BESPOKE | Integrating Sound & Vision for Artists. High-end bespoke studio architecture, audio-visual installations, and custom scenography. Based in Antwerp.">
+    
+    <!-- Gekoppelde losse stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 </head>
 <body>
 
-  <!-- HERO MET SLIDING BANNER -->
-  <header class="hero">
-    <div class="marquee-container">
-      <div class="marquee-content">
-        <span>AAA HiFi</span>
-        <span>•</span>
-        <span>INTEGRATING SOUND & VISION FOR ARTISTS</span>
-        <span>•</span>
-        <span>AAA HiFi</span>
-        <span>•</span>
-        <span>INTEGRATING SOUND & VISION FOR ARTISTS</span>
-        <span>•</span>
-        <span>AAA HiFi</span>
-        <span>•</span>
-        <span>INTEGRATING SOUND & VISION FOR ARTISTS</span>
-        <span>•</span>
-        <span>AAA HiFi</span>
-        <span>•</span>
-        <span>INTEGRATING SOUND & VISION FOR ARTISTS</span>
-        <span>•</span>
-      </div>
+    <div class="logo-container">
+        <a href="#"><img src="Logo.png" alt="AAA BESPOKE Logo"></a>
     </div>
-    <a href="mailto:info@aaahifi.com" class="contact-link">info@aaahifi.com</a>
-  </header>
 
-  <!-- SECTIES -->
-  <section class="section">
-    <h2>About AAA HiFi</h2>
-    <p>We combine high-end acoustics and vision systems tailored specifically for artists, studios, and discerning listeners.</p>
-  </section>
+    <div class="hero-slideshow" id="heroSlideshow">
+        <!-- Slide 1: Sound & Vision Integration -->
+        <div class="hero-slide active" style="--bg-desktop: url('assets/hero/AAA-H-SoundVision-desktop.jpg'); --bg-mobile: url('assets/hero/AAA-H-SoundVision-mobile.jpg');">
+            <div class="hero-navigation-wrapper">
+                <div class="hero-arrow" onclick="moveHero(-1)">&#139;</div>
+                <a href="#section-01" class="hero-link">Integrating Sound & Vision for Artists</a>
+                <div class="hero-arrow" onclick="moveHero(1)">&#155;</div>
+            </div>
+        </div>
+        <!-- Slide 2: Spatial Acoustics -->
+        <div class="hero-slide" style="--bg-desktop: url('assets/hero/AAA-H-Acoustics-desktop.jpg'); --bg-mobile: url('assets/hero/AAA-H-Acoustics-mobile.jpg');">
+            <div class="hero-navigation-wrapper">
+                <div class="hero-arrow" onclick="moveHero(-1)">&#139;</div>
+                <a href="#section-02" class="hero-link">Explore Spatial Acoustics</a>
+                <div class="hero-arrow" onclick="moveHero(1)">&#155;</div>
+            </div>
+        </div>
+        <!-- Slide 3: Sonic Scenography -->
+        <div class="hero-slide" style="--bg-desktop: url('assets/hero/AAA-H-Scenography-desktop.jpg'); --bg-mobile: url('assets/hero/AAA-H-Scenography-mobile.jpg');">
+            <div class="hero-navigation-wrapper">
+                <div class="hero-arrow" onclick="moveHero(-1)">&#139;</div>
+                <a href="#section-03" class="hero-link">Explore Sonic Scenography</a>
+                <div class="hero-arrow" onclick="moveHero(1)">&#155;</div>
+            </div>
+        </div>
+        <!-- Slide 4: Monolithic Hardware -->
+        <div class="hero-slide" style="--bg-desktop: url('assets/hero/AAA-H-Hardware-desktop.jpg'); --bg-mobile: url('assets/hero/AAA-H-Hardware-mobile.jpg');">
+            <div class="hero-navigation-wrapper">
+                <div class="hero-arrow" onclick="moveHero(-1)">&#139;</div>
+                <a href="#section-04" class="hero-link">Explore Monolithic Hardware</a>
+                <div class="hero-arrow" onclick="moveHero(1)">&#155;</div>
+            </div>
+        </div>
+        <!-- Slide 5: About -->
+        <div class="hero-slide" style="--bg-desktop: url('assets/hero/AAA-H-About-desktop.jpg'); --bg-mobile: url('assets/hero/AAA-H-About-mobile.jpg');">
+            <div class="hero-navigation-wrapper">
+                <div class="hero-arrow" onclick="moveHero(-1)">&#139;</div>
+                <a href="#about" class="hero-link">About AAA Bespoke</a>
+                <div class="hero-arrow" onclick="moveHero(1)">&#155;</div>
+            </div>
+        </div>
+        <!-- Scroll Down Invitation -->
+        <div class="scroll-invitation" onclick="lenis.scrollTo(document.querySelector('.intermission'), { duration: 1.5 })" aria-label="Scroll Down">
+            <span class="scroll-invitation__label">
+                <svg class="scroll-invitation__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 42" width="18px" height="32px">
+                    <path d="M2,12H2V30a10,10,0,0,0,20,0V12A10,10,0,0,0,2,12ZM0,12a12,12,0,0,1,24,0V30A12,12,0,0,1,0,30V12Z"/>
+                    <path class="scroll-invitation__svg-line" d="M11,7v4a1,1,0,0,0,2,0V7a1,1,0,0,0-2,0Z"/>
+                </svg>
+                Scroll Down
+            </span>
+        </div>
+    </div>
 
-  <section class="section">
-    <h2>Services</h2>
-    <p>Custom acoustic design, reference monitor integration, and full-room sound & vision architecture.</p>
-  </section>
+    <section class="intermission">
+        <div class="parallax-spotlight"></div>
+        <div class="parallax-drift-text">SONIC ARCHITECTURE</div>
+        <div class="narrative-container">
+            <p class="narrative-label">Chapter O1 / Acoustic Intelligence</p>
+            <h3 class="narrative-text">AAA BESPOKE is a specialized creative framework integrating audio engineering, bespoke space design, atmospheric vision, and bespoke hardware for artists.</h3>
+            <div class="narrative-line"></div>
+        </div>
+    </section>
 
-  <section class="section">
-    <h2>Contact</h2>
-    <p>For inquiries and consultations, reach out via <a href="mailto:info@aaahifi.com" style="color: inherit;">info@aaahifi.com</a>.</p>
-  </section>
+    <!-- Section 01: Sound & Vision -->
+    <section id="section-01" class="product-view" data-project-id="section-01">
+        <div class="slide-arrow arrow-left" onclick="moveSection(this, -1)">&#139;</div>
+        <div class="slide-arrow arrow-right" onclick="moveSection(this, 1)">&#155;</div>
+        <div class="swipe-hint"><span>swipe</span> <span>for</span> <span>more</span></div>
+        <div class="bg-injection-container"></div>
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <h2>Sound & Vision</h2>
+            <p>Artist Integration System</p>
+            <div class="plus-trigger-wrapper" onclick="toggleDetails(this, 'section-01')">
+                <div class="plus-trigger">+</div>
+                <span class="plus-info-label">Info</span>
+            </div>
+        </div>
+        <div class="side-panel">
+            <div class="panel-close-btn" onclick="closeDetails(this)">&#x2715; CLOSE</div>
+            <div class="panel-data"></div>
+        </div>
+    </section>
 
-  <footer>
-    &copy; AAA HiFi. All rights reserved.
-  </footer>
+    <section class="intermission">
+        <div class="parallax-spotlight" style="background: radial-gradient(circle at 30% 60%, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 60%);"></div>
+        <div class="parallax-drift-text" style="right: -10%;">ATMOSPHERIC HARMONY</div>
+        <div class="narrative-container" style="text-align: left; max-width: 850px;">
+            <p class="narrative-label">Chapter O2 / Visual Resonances</p>
+            <h3 class="narrative-text">Crafting autonomous soundscapes and immersive visual environments tailored to elevate individual artistic expression.</h3>
+            <div class="narrative-line" style="margin-left: 0;"></div>
+        </div>
+    </section>
 
+    <!-- Section 02: Spatial Acoustics -->
+    <section id="section-02" class="product-view" data-project-id="section-02">
+        <div class="slide-arrow arrow-left" onclick="moveSection(this, -1)">&#139;</div>
+        <div class="slide-arrow arrow-right" onclick="moveSection(this, 1)">&#155;</div>
+        <div class="swipe-hint"><span>swipe</span> <span>for</span> <span>more</span></div>
+        <div class="bg-injection-container"></div>
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <h2>Spatial Acoustics</h2>
+            <p>Architectural Soundscapes</p>
+            <div class="plus-trigger-wrapper" onclick="toggleDetails(this, 'section-02')">
+                <div class="plus-trigger">+</div>
+                <span class="plus-info-label">Info</span>
+            </div>
+        </div>
+        <div class="side-panel">
+            <div class="panel-close-btn" onclick="closeDetails(this)">&#x2715; CLOSE</div>
+            <div class="panel-data"></div>
+        </div>
+    </section>
+
+    <section class="intermission">
+        <div class="parallax-spotlight" style="background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0) 60%);"></div>
+        <div class="parallax-drift-text">CYBERNETIC FREQUENCIES</div>
+        <div class="narrative-container">
+            <p class="narrative-label">Chapter O3 / Studio Dynamics</p>
+            <h3 class="narrative-text">A seamless dialogue between acoustic precision, tactile materials, and evolving electronic infrastructure.</h3>
+            <div class="narrative-line"></div>
+        </div>
+    </section>
+
+    <!-- Section 03: Sonic Scenography -->
+    <section id="section-03" class="product-view" data-project-id="section-03">
+        <div class="slide-arrow arrow-left" onclick="moveSection(this, -1)">&#139;</div>
+        <div class="slide-arrow arrow-right" onclick="moveSection(this, 1)">&#155;</div>
+        <div class="swipe-hint"><span>swipe</span> <span>for</span> <span>more</span></div>
+        <div class="bg-injection-container"></div>
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <h2>Sonic Scenography</h2>
+            <p>Immersive Lighting & Audio</p>
+            <div class="plus-trigger-wrapper" onclick="toggleDetails(this, 'section-03')">
+                <div class="plus-trigger">+</div>
+                <span class="plus-info-label">Info</span>
+            </div>
+        </div>
+        <div class="side-panel">
+            <div class="panel-close-btn" onclick="closeDetails(this)">&#x2715; CLOSE</div>
+            <div class="panel-data"></div>
+        </div>
+    </section>
+
+    <section class="intermission">
+        <div class="parallax-spotlight" style="background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0) 60%);"></div>
+        <div class="parallax-drift-text">TACTILE SYNTHESIS</div>
+        <div class="narrative-container">
+            <p class="narrative-label">Chapter O4 / Material Vibration</p>
+            <h3 class="narrative-text">Custom-engineered architectural elements and studio furniture built specifically around executive creative workflows.</h3>
+            <div class="narrative-line"></div>
+        </div>
+    </section>
+
+    <!-- Section 04: Monolithic Hardware -->
+    <section id="section-04" class="product-view" data-project-id="section-04">
+        <div class="slide-arrow arrow-left" onclick="moveSection(this, -1)">&#139;</div>
+        <div class="slide-arrow arrow-right" onclick="moveSection(this, 1)">&#155;</div>
+        <div class="swipe-hint"><span>swipe</span> <span>for</span> <span>more</span></div>
+        <div class="bg-injection-container"></div>
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <h2>Monolithic Hardware</h2>
+            <p>Custom Artist Racks</p>
+            <div class="plus-trigger-wrapper" onclick="toggleDetails(this, 'section-04')">
+                <div class="plus-trigger">+</div>
+                <span class="plus-info-label">Info</span>
+            </div>
+        </div>
+        <div class="side-panel">
+            <div class="panel-close-btn" onclick="closeDetails(this)">&#x2715; CLOSE</div>
+            <div class="panel-data"></div>
+        </div>
+    </section>
+
+    <section class="intermission">
+        <div class="parallax-spotlight" style="background: radial-gradient(circle at 50% 60%, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0) 65%);"></div>
+        <div class="parallax-drift-text" style="left: -10%;">TRANSCENDENT FORM</div>
+        <div class="narrative-container">
+            <p class="narrative-label">Chapter O5 / Digital Resonance</p>
+            <h3 class="narrative-text">Designing permanent spatial artifacts that bridge the gap between physical acoustics and digital performance.</h3>
+            <div class="narrative-line"></div>
+        </div>
+    </section>
+
+    <!-- Section: About -->
+    <section id="about" class="product-view" data-project-id="about">
+        <div class="bg-injection-container"></div>
+        <div class="section-overlay"></div>
+        <div class="section-content">
+            <h2>About AAA Bespoke</h2>
+            <p>Immortal Vision</p>
+            <div class="plus-trigger-wrapper" onclick="toggleDetails(this, 'about')">
+                <div class="plus-trigger">+</div>
+                <span class="plus-info-label">Info</span>
+            </div>
+        </div>
+        <div class="side-panel">
+            <div class="panel-close-btn" onclick="closeDetails(this)">&#x2715; CLOSE</div>
+            <div class="panel-data"></div>
+        </div>
+    </section>
+
+    <footer class="footer-section" id="inquiries">
+        <form class="contact-form" id="aaaForm" onsubmit="handleFormSubmit(event)">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <h3 style="font-size: 11px; letter-spacing: 5px; margin-bottom: 60px; opacity: 0.4; font-weight: 300;">INQUIRIES</h3>
+            
+            <input type="text" id="formName" name="Name" placeholder="NAME" required autocomplete="off">
+            <input type="email" id="formEmail" name="Email" placeholder="EMAIL" required autocomplete="off">
+            <textarea id="formMessage" name="Message" placeholder="MESSAGE" rows="4" required autocomplete="off"></textarea>
+            
+            <div style="margin-top: 20px;">
+                <button type="submit" id="submitBtn" class="form-send-btn">SUBMIT REQUEST</button>
+            </div>
+        </form>
+        <p style="margin-top: 140px; font-size: 8px; opacity: 0.15; letter-spacing: 6px;">© 2026 AAA BESPOKE | BEYOND TIME & MATTER.</p>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Smooth Scrolling setup (Lenis)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            touchMultiplier: 1.5,
+            infinite: false,
+        });
+        function raf(time) { lenis.fn ? lenis.fn(time) : lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+        lenis.on('scroll', ScrollTrigger.update);
+
+        // Data matrix object
+        const projects = {
+            'section-01': {
+                title: 'Sound & Vision',
+                images: [
+                    { d: 'assets/designs/sound-vision/AAA-SoundVision-view01-desktop.jpg', m: 'assets/designs/sound-vision/AAA-SoundVision-view01-mobile.jpg' },
+                    { d: 'assets/designs/sound-vision/AAA-SoundVision-view02-desktop.jpg', m: 'assets/designs/sound-vision/AAA-SoundVision-view02-mobile.jpg' }
+                ],
+                details: [
+                    { label: 'Classification', value: 'Integrating Sound & Vision for Artists' },
+                    { label: 'Acoustic Precision', value: 'Decoupled studio environments & custom diffusion' },
+                    { label: 'Visual Hardware', value: 'Integrated LED scenography and spatial lighting' },
+                    { label: 'Location', value: 'Antwerp Laboratory / Global Client Services' }
+                ]
+            },
+            'section-02': {
+                title: 'Spatial Acoustics',
+                images: [
+                    { d: 'assets/designs/acoustics/AAA-Acoustics-view01-desktop.jpg', m: 'assets/designs/acoustics/AAA-Acoustics-view01-mobile.jpg' },
+                    { d: 'assets/designs/acoustics/AAA-Acoustics-view02-desktop.jpg', m: 'assets/designs/acoustics/AAA-Acoustics-view02-mobile.jpg' }
+                ],
+                details: [
+                    { label: 'Classification', value: 'Architectural Soundscape Engineering' },
+                    { label: 'Acoustic Isolation', value: 'Floating floor systems & multi-layer absorption' },
+                    { label: 'Finish Materiality', value: 'Solid milled hardwoods and porous metallic mesh' }
+                ]
+            },
+            'section-03': {
+                title: 'Sonic Scenography',
+                images: [
+                    { d: 'assets/designs/scenography/AAA-Scenography-view01-desktop.jpg', m: 'assets/designs/scenography/AAA-Scenography-view01-mobile.jpg' },
+                    { d: 'assets/designs/scenography/AAA-Scenography-view02-desktop.jpg', m: 'assets/designs/scenography/AAA-Scenography-view02-mobile.jpg' }
+                ],
+                details: [
+                    { label: 'Classification', value: 'Immersive Audio-Visual Setups' },
+                    { label: 'Lighting Sync', value: 'DMX/MIDI mapped spatial visual response' },
+                    { label: 'Ergonomics', value: 'Tailored artist interaction consoles' }
+                ]
+            },
+            'section-04': {
+                title: 'Monolithic Hardware',
+                images: [
+                    { d: 'assets/designs/hardware/AAA-Hardware-view01-desktop.jpg', m: 'assets/designs/hardware/AAA-Hardware-view01-mobile.jpg' },
+                    { d: 'assets/designs/hardware/AAA-Hardware-view02-desktop.jpg', m: 'assets/designs/hardware/AAA-Hardware-view02-mobile.jpg' }
+                ],
+                details: [
+                    { label: 'Classification', value: 'Custom Hardware Racks & Desks' },
+                    { label: 'Frame Integration', value: 'Anodized aerospace titanium and structural carbon' },
+                    { label: 'Cable Routing', value: 'Concealed magnetic routing matrices' }
+                ]
+            },
+            'about': {
+                title: 'AAA LABS // ABOUT',
+                images: [
+                    { d: 'assets/designs/about/AAA-About-view01-desktop.jpg', m: 'assets/designs/about/AAA-About-view01-mobile.jpg' }
+                ],
+                details: [
+                    { label: 'Core Identity', value: 'Integrating Sound & Vision for Artists' },
+                    { label: 'Coordinates', value: 'Antwerp Laboratory // Flanders, Belgium' },
+                    { label: 'Philosophy', value: 'Form follows emotion. Spatial installations built around human intuition, physical acoustics, and advanced performance system architecture.' }
+                ]
+            }
+        };
+
+        // Injectie van achtergronden bij het laden
+        document.querySelectorAll('.product-view').forEach(section => {
+            const pId = section.getAttribute('data-project-id');
+            const container = section.querySelector('.bg-injection-container');
+            if (pId && projects[pId] && container) {
+                let generatedHTML = '';
+                projects[pId].images.forEach((img, index) => {
+                    const activeClass = (index === 0) ? 'active' : '';
+                    generatedHTML += `<div class="section-bg ${activeClass}" style="--bg-desktop: url('${img.d}'); --bg-mobile: url('${img.m}');"></div>`;
+                });
+                container.innerHTML = generatedHTML;
+            }
+        });
+
+        // GSAP Parallax (Desktop)
+        const mm = gsap.matchMedia();
+        mm.add("(min-width: 769px)", () => {
+            document.querySelectorAll('.intermission').forEach(sect => {
+                const spot = sect.querySelector('.parallax-spotlight');
+                const drift = sect.querySelector('.parallax-drift-text');
+                const narrative = sect.querySelector('.narrative-container');
+
+                if(spot) { gsap.to(spot, { yPercent: 15, ease: "none", scrollTrigger: { trigger: sect, scrub: true } }); }
+                if(drift) { gsap.fromTo(drift, { xPercent: 10 }, { xPercent: -10, ease: "none", scrollTrigger: { trigger: sect, scrub: true } }); }
+                if(narrative) {
+                    gsap.fromTo(narrative, 
+                        { y: 100, opacity: 0 }, 
+                        { y: -40, opacity: 1, ease: "power2.out", scrollTrigger: { trigger: sect, start: "top 85%", end: "top 25%", scrub: 1 } }
+                    );
+                }
+            });
+
+            document.querySelectorAll('.product-view').forEach(sect => {
+                const bg = sect.querySelector('.section-bg');
+                if(bg) { gsap.fromTo(bg, { yPercent: -10 }, { yPercent: 10, ease: "none", scrollTrigger: { trigger: sect, scrub: true } }); }
+            });
+        });
+
+        // Hero Cinematic Scroll Zoom
+        gsap.to('.hero-slide', {
+            scale: 1.08,
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.hero-slideshow',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        // Hero Slideshow Switch
+        let hIdx = 0;
+        const hSlides = document.querySelectorAll('.hero-slide');
+        let heroInterval = setInterval(() => moveHero(1), 6000);
+
+        function moveHero(direction) {
+            if(hSlides.length === 0) return;
+            hSlides[hIdx].classList.remove('active');
+            hIdx = (hIdx + direction + hSlides.length) % hSlides.length;
+            hSlides[hIdx].classList.add('active');
+            clearInterval(heroInterval);
+            heroInterval = setInterval(() => moveHero(1), 6000);
+            if (navigator.vibrate) { navigator.vibrate(15); }
+        }
+
+        // Hero Swipe
+        const heroContainer = document.getElementById('heroSlideshow');
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        if (heroContainer) {
+            heroContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+
+            heroContainer.addEventListener('touchmove', (e) => {
+                let xDist = Math.abs(e.changedTouches[0].screenX - touchStartX);
+                let yDist = Math.abs(e.changedTouches[0].screenY - touchStartY);
+                if (xDist > yDist && xDist > 10) { if (e.cancelable) e.preventDefault(); }
+            }, { passive: false });
+
+            heroContainer.addEventListener('touchend', (e) => {
+                let touchEndX = e.changedTouches[0].screenX;
+                let touchEndY = e.changedTouches[0].screenY;
+                let swipeThreshold = 40; 
+                let swipeDistance = touchEndX - touchStartX;
+                let yDistance = Math.abs(touchEndY - touchStartY);
+                if (Math.abs(swipeDistance) > swipeThreshold && Math.abs(swipeDistance) > yDistance) {
+                    if (swipeDistance > 0) { moveHero(-1); } else { moveHero(1); }
+                }
+            }, { passive: true });
+        }
+
+        // Section Carousels
+        document.querySelectorAll('.product-view').forEach(s => {
+            const bgs = s.querySelectorAll('.section-bg');
+            const hint = s.querySelector('.swipe-hint');
+            
+            if(bgs.length > 1) {
+                let bIdx = 0;
+                if (hint) { hint.classList.add('visible'); }
+
+                let sectInterval = setInterval(() => changeBg(1), 5000);
+
+                function changeBg(direction) {
+                    if (hint) { hint.classList.remove('visible'); }
+                    bgs[bIdx].classList.remove('active');
+                    bIdx = (bIdx + direction + bgs.length) % bgs.length;
+                    bgs[bIdx].classList.add('active');
+                    if (navigator.vibrate && direction !== 0) { navigator.vibrate(15); }
+                }
+
+                s.moveBg = function(direction) {
+                    changeBg(direction);
+                    clearInterval(sectInterval);
+                    sectInterval = setInterval(() => changeBg(1), 5000);
+                };
+
+                let pTouchStartX = 0;
+                let pTouchStartY = 0;
+
+                s.addEventListener('touchstart', (e) => {
+                    if (e.target.closest('.side-panel')) return;
+                    pTouchStartX = e.changedTouches[0].screenX;
+                    pTouchStartY = e.changedTouches[0].screenY;
+                }, { passive: true });
+
+                s.addEventListener('touchmove', (e) => {
+                    if (e.target.closest('.side-panel')) return;
+                    let xDist = Math.abs(e.changedTouches[0].screenX - pTouchStartX);
+                    let yDist = Math.abs(e.changedTouches[0].screenY - pTouchStartY);
+                    if (xDist > yDist && xDist > 10) { if (e.cancelable) e.preventDefault(); }
+                }, { passive: false });
+
+                s.addEventListener('touchend', (e) => {
+                    if (e.target.closest('.side-panel')) return;
+                    let pTouchEndX = e.changedTouches[0].screenX;
+                    let pTouchEndY = e.changedTouches[0].screenY;
+                    const swipeThreshold = 40;
+                    const swipeDistance = pTouchEndX - pTouchStartX;
+                    const yDistance = Math.abs(pTouchEndY - pTouchStartY);
+                    if (Math.abs(swipeDistance) > swipeThreshold && Math.abs(swipeDistance) > yDistance) {
+                        if (swipeDistance > 0) { s.moveBg(-1); } else { s.moveBg(1); }
+                    }
+                }, { passive: true });
+            }
+        });
+
+        function moveSection(arrowElement, direction) {
+            const parentSection = arrowElement.closest('section');
+            if (parentSection && typeof parentSection.moveBg === 'function') {
+                parentSection.moveBg(direction);
+            }
+        }
+
+        // Side panel toggles
+        function toggleDetails(element, id) {
+            const parentSection = element.closest('section');
+            const panel = parentSection.querySelector('.side-panel');
+            const plusTrigger = parentSection.querySelector('.plus-trigger');
+            const infoLabel = parentSection.querySelector('.plus-info-label');
+            const panelData = parentSection.querySelector('.panel-data');
+            
+            if (!panel) return;
+            
+            if (panel.classList.contains('open')) {
+                panel.classList.remove('open');
+                if (plusTrigger) plusTrigger.style.transform = 'rotate(0deg)';
+                if (infoLabel) infoLabel.style.opacity = '1';
+            } else {
+                const p = projects[id];
+                if(!p) return;
+                
+                let cleanHTML = `<div class="matrix-header">${p.title} // Specifications</div>`;
+                p.details.forEach(item => {
+                    cleanHTML += `
+                        <div class="matrix-row">
+                            <div class="matrix-meta">${item.label}</div>
+                            <div class="matrix-title">${item.value}</div>
+                        </div>
+                    `;
+                });
+
+                cleanHTML += `
+                    <div class="panel-inquiry-container">
+                        <div class="panel-inquiry-link" onclick="scrollToInquiries(this)">Inquire for acquisition</div>
+                    </div>
+                `;
+                
+                panelData.innerHTML = cleanHTML;
+                panel.classList.add('open');
+                if (plusTrigger) plusTrigger.style.transform = 'rotate(45deg)';
+                if (infoLabel) infoLabel.style.opacity = '0'; 
+            }
+        }
+
+        function closeDetails(closeButtonElement) {
+            const parentSection = closeButtonElement.closest('section');
+            const panel = parentSection.querySelector('.side-panel');
+            const plusTrigger = parentSection.querySelector('.plus-trigger');
+            const infoLabel = parentSection.querySelector('.plus-info-label');
+            
+            if (panel) panel.classList.remove('open');
+            if (plusTrigger) plusTrigger.style.transform = 'rotate(0deg)';
+            if (infoLabel) infoLabel.style.opacity = '1';
+        }
+
+        function scrollToInquiries(linkElement) {
+            const parentSection = linkElement.closest('section');
+            const panel = parentSection.querySelector('.side-panel');
+            const plusTrigger = parentSection.querySelector('.plus-trigger');
+            const infoLabel = parentSection.querySelector('.plus-info-label');
+            
+            if (panel) panel.classList.remove('open');
+            if (plusTrigger) plusTrigger.style.transform = 'rotate(0deg)';
+            if (infoLabel) infoLabel.style.opacity = '1';
+            
+            lenis.scrollTo('#inquiries', { duration: 1.5 });
+        }
+
+        // Form Submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const button = document.getElementById('submitBtn');
+            const form = document.getElementById('aaaForm');
+            button.innerText = "SENDING...";
+            button.style.pointerEvents = "none";
+            button.style.opacity = "0.4";
+            const formData = new FormData(form);
+            
+            fetch("https://formsubmit.co/ajax/info@aaabespoke.com", {
+                method: "POST",
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    button.innerText = "REQUEST SENT";
+                    button.style.opacity = "0.9";
+                    form.reset();
+                    setTimeout(() => {
+                        button.innerText = "SUBMIT REQUEST";
+                        button.style.pointerEvents = "auto";
+                    }, 5000);
+                } else {
+                    button.innerText = "REDIRECTING...";
+                    form.action = "https://formsubmit.co/info@aaabespoke.com";
+                    form.method = "POST";
+                    form.removeAttribute('onsubmit'); 
+                    form.submit();
+                }
+            })
+            .catch(error => {
+                button.innerText = "REDIRECTING...";
+                form.action = "https://formsubmit.co/info@aaabespoke.com";
+                form.method = "POST";
+                form.removeAttribute('onsubmit');
+                form.submit();
+            });
+        }
+    </script>
 </body>
 </html>
