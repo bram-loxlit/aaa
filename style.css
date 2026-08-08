@@ -12,9 +12,20 @@ body, html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Fixed Navigation */
-.logo-container { position: fixed; top: 25px; left: 30px; width: 140px; z-index: 2000; }
-.logo-container img { width: 100%; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)); }
+/* Fixed Navigation (Gecentreerd & 50% kleiner) */
+.logo-container { 
+    position: fixed; 
+    top: 25px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 70px; /* Was 140px, nu 50% kleiner */
+    z-index: 2000; 
+}
+.logo-container img { 
+    width: 100%; 
+    display: block;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3)); 
+}
 
 /* 1. HERO SLIDESHOW */
 .hero-slideshow { 
