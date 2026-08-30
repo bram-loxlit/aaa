@@ -6,11 +6,63 @@
     <title>AAA LABS</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-900 text-white">
-    <div class="container mx-auto px-4 py-16 text-center">
-        <h1 class="text-5xl font-bold mb-4">AAA LABS</h1>
-        <p class="text-xl mb-8">Artist | Designer | Innovator</p>
-        <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Portfolio</a>
+<body>
+
+    <div class="logo-container">
+        <a href="#"><img src="Logo.png" alt="AAA BESPOKE Logo"></a>
+    </div>
+
+    <div class="hero-slideshow" id="heroSlideshow">
+        <!-- Slide 1: Sound & Vision Integration -->
+        <div class="hero-slide active" style="--bg-desktop: url('assets/hero/AAA-H-SoundVision-desktop.jpg'); --bg-mobile: url('assets/hero/AAA-H-SoundVision-mobile.jpg');">
+            <div class="hero-navigation-wrapper">
+                <div class="hero-arrow" onclick="moveHero(-1)">&#139;</div>
+                <a href="#section-01" class="hero-link">Integrating Sound &amp; Vision for Artists</a>
+                <div class="hero-arrow" onclick="moveHero(1)">&#155;</div>
+            </div>
+        </div>
+        <!-- Slide 2: Spatial Acoustics -->
+        <div class="hero-slide" style="--bg-desktop: url('assets/hero/AAA-H-Acoustics-desktop.jpg'); --bg-mobile: url('assets/hero/AAA-H-Acoustics-mobile.jpg');">
+            <div class="hero-navigation-wrapper">
+                <div class="hero-arrow" onclick="moveHero(-1)">&#139;</div>
+                <a href="#section-02" class="hero-link">Explore Spatial Acoustics</a>
+                <div class="hero-arrow" onclick="moveHero(1)">&#155;</div>
+            </div>
+        </div>
+        <!-- Slide 3: Sonic Scenography -->
+        <div class="hero-slide" style="--bg-desktop: url('assets/hero/AAA-H-Scenography-desktop.jpg'); --bg-mobile: url('assets/hero/AAA-H-Scenography-mobile.jpg');">
+            <div class="hero-navigation-wrapper">
+                <div class="hero-arrow" onclick="moveHero(-1)">&#139;</div>
+                <a href="#section-03" class="hero-link">Explore Sonic Scenography</a>
+                <div class="hero-arrow" onclick="moveHero(1)">&#155;</div>
+            </div>
+        </div>
+        <!-- Slide 4: Monolithic Hardware -->
+        <div class="hero-slide" style="--bg-desktop: url('assets/hero/AAA-H-Hardware-desktop.jpg'); --bg-mobile: url('assets/hero/AAA-H-Hardware-mobile.jpg');">
+            <div class="hero-navigation-wrapper">
+                <div class="hero-arrow" onclick="moveHero(-1)">&#139;</div>
+                <a href="#section-04" class="hero-link">Explore Monolithic Hardware</a>
+                <div class="hero-arrow" onclick="moveHero(1)">&#155;</div>
+            </div>
+        </div>
+        <!-- Slide 5: About -->
+        <div class="hero-slide" style="--bg-desktop: url('assets/hero/AAA-H-About-desktop.jpg'); --bg-mobile: url('assets/hero/AAA-H-About-mobile.jpg');">
+            <div class="hero-navigation-wrapper">
+                <div class="hero-arrow" onclick="moveHero(-1)">&#139;</div>
+                <a href="#about" class="hero-link">About AAA Bespoke</a>
+                <div class="hero-arrow" onclick="moveHero(1)">&#155;</div>
+            </div>
+        </div>
+        <!-- Scroll Down Invitation -->
+        <div class="scroll-invitation" onclick="lenis.scrollTo(document.querySelector('.intermission'), { duration: 1.5 })" aria-label="Scroll Down">
+            <span class="scroll-invitation__label">
+                <svg class="scroll-invitation__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 42" width="18px" height="32px">
+                    <path d="M2,12H2V30a10,10,0,0,0,20,0V12A10,10,0,0,0,2,12ZM0,12a12,12,0,0,1,24,0V30A12,12,0,0,1,0,30V12Z"/>
+                    <path class="scroll-invitation__svg-line" d="M11,7v4a1,1,0,0,0,2,0V7a1,1,0,0,0-2,0Z"/>
+                </svg>
+                Scroll Down
+            </span>
+        </div>
     </div>
 </body>
 </html>
